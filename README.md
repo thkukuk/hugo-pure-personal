@@ -31,7 +31,7 @@ theme = "temple"
 ```
 
 ## Customizing
-A `config.toml` file with all options should be created:
+A `config.toml` file with all necessary options should be created:
 
 ```toml
 baseURL = "https://www.example.com/"
@@ -49,7 +49,6 @@ copyright="Copyright © 2022-{year} John Doe"
   # Enable table of contents, this can be overridden by page level parameter toc.
   toc = true
   #accentColor = "#FD3519"
-
 
 [params.intro]
   main = "John Doe"
