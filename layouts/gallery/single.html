@@ -1,0 +1,7 @@
+{{ partial "header" .}}
+
+<h1>{{ if .Draft }}DRAFT: {{end}}{{ .Title }}</h1>
+
+{{ .Content }}
+
+{{ partial "footer" .}}

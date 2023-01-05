@@ -1,0 +1,12 @@
+name = "hugo-pure-personal"
+description = "Hugo theme based on pureCSS for personal hompages"
+license = "MIT"
+licenselink = "https://github.com/thkukuk/hugo-pure-personal/blob/main/LICENSE"
+homepage = "https://github.com/thkukuk/hugo-pure-personal/"
+tags = ["responsive", "personal"]
+features = ["responsive"]
+min_version = "0.108.0"
+
+[author]
+    name = "Thorsten Kukuk"
+    homepage = "https://www.thkukuk.de/"

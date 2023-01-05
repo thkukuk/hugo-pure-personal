@@ -1,0 +1,15 @@
+<meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='description' content='{{ .Params.description }}'>
+{{- if .Site.Author.name }}
+  <meta name='author' content="{{ .Site.Author.name }}">
+{{- end }}
+{{- if .Site.Params.accentColor }}
+  <meta name='theme-color' content='{{- .Site.Params.accentColor -}}'>
+{{- end }}
+{{- if .Site.Params.assets.favicon }}
+  <link rel="shortcut icon" href="{{ .Site.Params.assets.favicon |relURL }}" type="image/x-icon">
+  <link rel="icon" href="{{ .Site.Params.assets.favicon | relURL }}" type="image/x-icon">
+{{- end }}
+
+  {{ hugo.Generator }}

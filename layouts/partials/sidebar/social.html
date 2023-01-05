@@ -1,0 +1,33 @@
+{{ range .Site.Menus.social }}
+  {{ if .URL }}
+    <a href="{{ .URL }}" class="social-link" target="_blank" rel="noopener" >
+      <div class="icon">
+        {{ if eq .Name "Twitter" }}
+        <span>{{- partial "sidebar/icon/twitterIcon.html" . -}}</span>
+        {{ else if eq .Name "Codeberg" }}
+        <span>{{- partial "sidebar/icon/codebergIcon.html" . -}}</span>
+        {{ else if eq .Name "GitHub" }}
+        <span>{{- partial "sidebar/icon/githubIcon.html" . -}}</span>
+        {{ else if eq .Name "GitLab" }}
+        <span>{{- partial "sidebar/icon/gitlabIcon.html" . -}}</span>
+        {{ else if eq .Name "LinkedIn" }}
+        <span>{{- partial "sidebar/icon/linkedinIcon.html" . -}}</span>
+        {{ else if eq .Name "Mastodon" }}
+        <span>{{- partial "sidebar/icon/mastodonIcon.html" . -}}</span>
+        {{ else if eq .Name "Instagram" }}
+        <span>{{- partial "sidebar/icon/instagramIcon.html" . -}}</span>
+        {{ else if eq .Name "Dribbble" }}
+        <span>{{- partial "sidebar/icon/dribbbleIcon.html" . -}}</span>
+        {{ else if eq .Name "Codepen" }}
+        <span>{{- partial "sidebar/icon/codepenIcon.html" . -}}</span>
+        {{ else if eq .Name "Twitch" }}
+        <span>{{- partial "sidebar/icon/twitchIcon.html" . -}}</span>
+        {{ else if eq .Name "Email" }}
+        <span>{{- partial "sidebar/icon/emailIcon.html" . -}}</span>
+        {{ else if eq .Name "RSS" }}
+        <span>{{- partial "sidebar/icon/rssfeedIcon.html" . -}}</span>
+        {{ end }}
+      </div>
+    </a>
+  {{end}}
+{{ end }}

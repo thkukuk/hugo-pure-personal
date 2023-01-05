@@ -1,0 +1,12 @@
+{{ partial "header" .}}
+
+  <h1 id="title">{{ if .Draft }}DRAFT: {{end}}{{ .Title }}</h1>
+
+  <p>{{ .Content }}</p>
+  <ul id="list">
+  {{- range .Pages.ByDate -}}
+    {{ .Render "li" }}
+  {{- end -}}
+  </ul>
+
+{{ partial "footer" .}}

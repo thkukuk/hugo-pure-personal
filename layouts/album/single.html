@@ -1,0 +1,15 @@
+{{ partial "header" .}}
+
+<h1>{{ if .Draft }}DRAFT: {{end}}{{ .Title }}</h1>
+<div class="published-date">
+  {{ partial "icon/calendar" (dict "size" "18px")}}
+  <span>{{ .PublishDate.Format "January 2, 2006" }}</span>
+</div>
+
+{{- if or .Params.toc (and (eq .Params.toc nil) .Site.Params.toc) -}}
+  {{ .TableOfContents }}
+{{- end -}}
+
+{{ .Content }}
+
+{{ partial "footer" .}}

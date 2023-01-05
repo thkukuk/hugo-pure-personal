@@ -1,0 +1,16 @@
+<li>
+  <div>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ if .Params.Icon }}
+      <span class="icon">&nbsp;{{ readFile .Params.Icon | safeHTML }}</span>
+    {{ end }}
+  </div>
+  <div class="published-date">
+    {{ partial "icon/calendar" (dict "size" "18px")}}
+    {{- if .Site.Params.dateformatpretty -}}
+      {{ .Date.Format .Site.Params.dateformatpretty }}
+    {{- else -}}
+      {{ .Date.Format "Mon, Jan 2, 2006" }}
+    {{- end -}}
+  </div>
+</li>

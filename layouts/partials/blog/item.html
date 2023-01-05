@@ -1,0 +1,17 @@
+<div class="blog-container">
+  <h2>
+    <a href="{{.RelPermalink}}">{{ .Title }}</a>
+  </h2>
+  <div class="published-date">
+    {{ partial "icon/clock" (dict "size" "18px")}}
+    <span>{{ .PublishDate.Format "January 2, 2006" }}</span>
+    {{- if .Params.Author }}
+    <span> - {{ .Params.Author }}</span>
+    {{ end -}}
+  </div>
+  <p>{{ .Summary | plainify | safeHTML }}</p>
+  <div class="read-more">
+    <a alt="{{.Title}}" href="{{.RelPermalink}}" />{{ partial "icon/read" (dict "size" "18px")}}
+    Read more</a>
+  </div>
+</div>

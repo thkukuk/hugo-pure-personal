@@ -1,0 +1,6 @@
+{{ partial "header" .}}
+
+<h1>{{ .Site.Params.notFound.h1 | default "Ooops!" }}</h1>
+<p>{{ .Site.Params.notFound.p | default "The page you are looking for might have been removed, had its name changed or is temporarily unavailable." }}</p>
+
+{{ partial "footer" .}}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{{- if .Params.Language }}
+<html lang='{{ .Params.Language }}'>
+{{ else }}
+<html lang='{{ site.LanguageCode | default site.Language.Lang }}'>
+{{ end }}
+{{- partial "head/head" . -}}
+
+<body>
+  <div id="layout" class="pure-g">
+    {{ partial "sidebar/sidebar" . }}
+    <div class="pure-u-1-24 pure-u-xl-5-24"></div>
+    <div class="pure-u-11-12 pure-u-xl-7-12">
+      {{- if .Site.Params.breadcrumb }}
+      {{ partial "breadcrumb" .}}
+      {{ end -}}
+      <main id="content" class="{{ .Type }}">

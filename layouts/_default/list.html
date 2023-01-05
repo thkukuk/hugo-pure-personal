@@ -1,0 +1,17 @@
+{{ partial "header" . }}
+
+  <h1>{{ if .Draft }}DRAFT: {{end}}{{ .Title }}</h1>
+
+  {{- if .Content -}}
+  {{ replace .Content "<table>" "<table class='pure-table pure-table-striped'>" | safeHTML }}
+  {{- end -}}
+
+  <ul id="list">
+    {{- $sortOrder := .Page.Params.Sort | default (.Site.Params.Sort | default "desc") -}}
+    {{- $pages := .Data.Pages -}}
+    {{ range sort $pages "Date" $sortOrder }}
+      {{ .Render "li" }}
+    {{- end -}}
+  </ul>
+
+{{ partial "footer" . }}

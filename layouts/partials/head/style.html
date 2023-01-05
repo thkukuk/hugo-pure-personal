@@ -1,0 +1,19 @@
+{{- $base := resources.Get "assets/css/base.css" -}}
+{{- $grids := resources.Get "assets/css/grids.css" -}}
+{{- $grids_responsive := resources.Get "assets/css/grids-responsive.css" -}}
+{{- $menus := resources.Get "assets/css/menus.css" -}}
+{{- $tables := resources.Get "assets/css/tables.css" -}}
+{{- $pure := slice $base $grids $grids_responsive $menus $tables | resources.Concat "assets/css/pure.css" | minify | fingerprint -}}
+
+{{- $custom_variables := resources.Get "assets/css/custom-variables.css" -}}
+{{- $custom_base := resources.Get "assets/css/custom-base.css" -}}
+{{- $side_menu := resources.Get "assets/css/side-menu.css" -}}
+{{- $custom_pure := slice $custom_variables $custom_base $side_menu | resources.Concat "assets/css/custom-pure.css" | minify | fingerprint -}}
+
+
+  <link rel="stylesheet" href="{{ $pure.RelPermalink }}" integrity="{{ $pure.Data.Integrity }}" media="screen">
+  <link rel="stylesheet" href="{{ $custom_pure.RelPermalink }}" integrity="{{ $custom_pure.Data.Integrity }}" media="screen">
+
+{{ if .Site.Params.assets.customCSS }}
+  <link rel="stylesheet" href="{{ .Site.Params.assets.customCSS | relURL }}" media="screen">
+{{ end }}

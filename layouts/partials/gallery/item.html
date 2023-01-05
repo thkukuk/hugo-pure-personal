@@ -1,0 +1,12 @@
+<div class="gallery-list">
+  <a href="{{.RelPermalink}}">
+    <div class="image-container">
+	    <img title="{{.Title}}" alt="{{.Title}}" src="/gallery/{{ .Params.Thumbnail }}" /><!-- XXX static /gallery/! -->
+      <div class="img-overlay">
+      </div>
+      <div class="gallery-details">
+        <h2><span>{{ .Title }}</span></h2>
+      </div>
+    </div>
+  </a>
+</div>
