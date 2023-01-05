@@ -53,7 +53,7 @@ copyright="Copyright © 2022-{year} John Doe"
 
 [params.intro]
   main = "John Doe"
-  sub = ":wink:
+  sub = ":wink:"
 
 [params.sidebar]
   logo = "/images/John-Doe-Portrait-256x256.webp"
