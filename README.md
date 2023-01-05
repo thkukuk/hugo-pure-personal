@@ -21,13 +21,13 @@ People who have no experience with Hugo it's recommendet to read at leat the [Qu
 Else, download or clone the theme into the `themes` directory:
 
 ```bash
-$ cd themes && git clone https://github.com/thkukuk/hugo-pure-minimal.git
+$ cd themes && git clone https://github.com/thkukuk/hugo-pure-personal.git
 ```
 
 Then reference it in your `config`:
 
 ```TOML
-theme = "temple"
+theme = "hugo-pure-personal"
 ```
 
 ## Customizing
