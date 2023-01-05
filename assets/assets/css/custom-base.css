@@ -26,7 +26,7 @@ p::selection{
     color:#364049
 }
 p{
-    display:block;
+    display: block;
     font-weight:400;
     font-size:1em;
     margin-top:0;
@@ -108,7 +108,7 @@ kbd, pre, code, samp {
 }
 
 .breadcrumb {
-    display: block
+    display: block;
     max-width: 45em;
     padding: 35px 0px 0px 0px;
 }
@@ -127,24 +127,24 @@ kbd, pre, code, samp {
 /*
  * For type "gallery" (photo galleries)
  */
-#content .gallery-list h2{
-    margin:0;
+#content .gallery-list h2 {
+    margin: 0;
 }
 #content .gallery-list a,#content .gallery-list a:hover,#content .gallery-list a:link,#content .gallery-list a:active,#content .gallery-list a:visited,#content .gallery-list a:focus{
     border-bottom:none;
     color:inherit
 }
-#content .gallery-list img{
-    max-width:100%;
-    border-radius:2px;
-    display:block;
-    box-shadow:0 0 5px var(--color);
-    margin:inherit
+#content .gallery-list img {
+    max-width: 100%;
+    border-radius: 2px;
+    display: block;
+    box-shadow: 0 0 5px var(--color);
+    margin: inherit
 }
-#content .gallery-list .image-container{
-    position:relative;
-    max-width:45em;
-    margin-bottom:30px
+#content .gallery-list .image-container {
+    position: relative;
+    max-width: 45em;
+    margin-bottom: 30px
 }
 #content .gallery-list .image-container .gallery-details{
     opacity:0;
@@ -158,10 +158,10 @@ kbd, pre, code, samp {
     -o-transition:opacity .4s ease;
     transition:opacity .4s ease
 }
-#content .gallery-list .image-container .gallery-details p,#content .gallery-list .image-container .gallery-details h2{
-    text-align:center;
-    margin-bottom:0;
-    position:relative
+#content .gallery-list .image-container .gallery-details p,#content .gallery-list .image-container .gallery-details h2 {
+    text-align: center;
+    margin-bottom: 0;
+    position: relative;
 }
 #content .gallery-list .image-container .img-overlay{
     position:absolute;
@@ -184,7 +184,7 @@ kbd, pre, code, samp {
 }
 #content .gallery-list .image-container:hover .gallery-details{
     opacity:1;
-    display:block;
+    display: block;
     position:absolute;
     top:50%;
     left:50%;
@@ -192,16 +192,13 @@ kbd, pre, code, samp {
     -ms-transform:translate(-50%,-50%);
     transform:translate(-50%,-50%)
 }
-#content .gallery-list img::hover{
-    linear-gradient:#112F41,#112F41
-}
 
 #content .icon {
     margin-right: 5px;
-    display: inline-block
+    display: inline-block;
 }
 #content .icon svg {
-    width: auto
+    width: auto;
 }
 
 #content .icon {
@@ -223,7 +220,7 @@ kbd, pre, code, samp {
 .read-more{
     margin-top:-10px;
     text-align:right;
-    display:block
+    display: block;
 }
 
 .footer {
