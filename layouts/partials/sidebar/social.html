@@ -3,29 +3,25 @@
     <a href="{{ .URL }}" class="social-link" target="_blank" rel="noopener" >
       <div class="icon">
         {{ if eq .Name "Twitter" }}
-        <span>{{- partial "sidebar/icon/twitterIcon.html" . -}}</span>
-        {{ else if eq .Name "Codeberg" }}
-        <span>{{- partial "sidebar/icon/codebergIcon.html" . -}}</span>
+        <span>{{- partial "sidebar/icons/twitter.svg" . -}}</span>
         {{ else if eq .Name "GitHub" }}
-        <span>{{- partial "sidebar/icon/githubIcon.html" . -}}</span>
+        <span>{{- partial "sidebar/icons/github.svg" . -}}</span>
         {{ else if eq .Name "GitLab" }}
-        <span>{{- partial "sidebar/icon/gitlabIcon.html" . -}}</span>
+        <span>{{- partial "sidebar/icons/gitlab.svg" . -}}</span>
         {{ else if eq .Name "LinkedIn" }}
-        <span>{{- partial "sidebar/icon/linkedinIcon.html" . -}}</span>
-        {{ else if eq .Name "Mastodon" }}
-        <span>{{- partial "sidebar/icon/mastodonIcon.html" . -}}</span>
+        <span>{{- partial "sidebar/icons/linkedin.svg" . -}}</span>
         {{ else if eq .Name "Instagram" }}
-        <span>{{- partial "sidebar/icon/instagramIcon.html" . -}}</span>
+        <span>{{- partial "sidebar/icons/instagram.svg" . -}}</span>
         {{ else if eq .Name "Dribbble" }}
-        <span>{{- partial "sidebar/icon/dribbbleIcon.html" . -}}</span>
+        <span>{{- partial "sidebar/icons/dribbble.svg" . -}}</span>
         {{ else if eq .Name "Codepen" }}
-        <span>{{- partial "sidebar/icon/codepenIcon.html" . -}}</span>
+        <span>{{- partial "sidebar/icons/codepen.svg" . -}}</span>
         {{ else if eq .Name "Twitch" }}
-        <span>{{- partial "sidebar/icon/twitchIcon.html" . -}}</span>
+        <span>{{- partial "sidebar/icons/twitch.svg" . -}}</span>
         {{ else if eq .Name "Email" }}
-        <span>{{- partial "sidebar/icon/emailIcon.html" . -}}</span>
+        <span>{{- partial "sidebar/icons/email.svg" . -}}</span>
         {{ else if eq .Name "RSS" }}
-        <span>{{- partial "sidebar/icon/rssfeedIcon.html" . -}}</span>
+        <span>{{- partial "sidebar/icons/rss.svg" . -}}</span>
         {{ end }}
       </div>
     </a>
