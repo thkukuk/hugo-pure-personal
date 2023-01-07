@@ -3,7 +3,7 @@
   <h1>{{ if .Draft }}DRAFT: {{end}}{{ .Title }}</h1>
 
   {{- if .Content -}}
-  {{ replace .Content "<table>" "<table class='pure-table pure-table-striped'>" | safeHTML }}
+  {{ replace .Content "<table>" "<table class='pure-table pure-table-bordered'>" | safeHTML }}
   {{- end -}}
 
   <ul id="list">

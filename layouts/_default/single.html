@@ -1,47 +1,41 @@
 {{ partial "header" .}}
 
-<div class="post">
-
-  <div class="post-title">
-    <h1>{{ if .Draft }}DRAFT: {{end}}{{ .Title }}</h1>
-    <p>
-      {{ if not .Date.IsZero }}
-      <div class="published-date">
-      {{ partial "icon/calendar" (dict "size" "18px")}}
-      {{- if .Site.Params.dateformatpretty }}
-        <span>{{ .Date.Format .Site.Params.dateformatpretty }}</span>
-      {{- else -}}
-        <span>{{ .Date.Format "January 2, 2006" }}</span>
-      {{ end -}}
-      {{- if .Params.Author }}
-        <span> - {{ .Params.Author }}</span>
-      {{ end -}}
-      </div>
-      {{ end }}
-
-      {{ if or .Params.tags .Params.categories .Params.series }}
-        |
-      {{ end }}
-      {{ if and .Params.tags (isset .Params "tags") }}
-        tags: [ {{ range .Params.tags }}<a href="{{ relURL "tags/" }}{{ . | urlize }}">{{ . }}</a> {{ end }}]
-      {{ end }}
-
-      {{ if and .Params.categories (isset .Params "categories") }}
-	categories: [ {{ range .Params.categories }}<a href="{{ relURL "categories/" }}{{ . | urlize }}">{{ . }}</a> {{ end }}]
-      {{ end }}
-
-      {{ if and .Params.series (isset .Params "series") }}
-	series: [ {{ range .Params.series }}<a href="{{ relURL "series/" }}{{ . | urlize }}">{{ . }}</a> {{ end }}]
-      {{ end }}
-    </p>
+<h1>{{ if .Draft }}DRAFT: {{end}}{{ .Title }}</h1>
+<p>
+  {{ if not .Date.IsZero }}
+  <div class="published-date">
+  {{ partial "icon/calendar" (dict "size" "18px")}}
+  {{- if .Site.Params.dateformatpretty }}
+    <span>{{ .Date.Format .Site.Params.dateformatpretty }}</span>
+  {{- else -}}
+    <span>{{ .Date.Format "January 2, 2006" }}</span>
+  {{ end -}}
+  {{- if .Params.Author }}
+    <span> - {{ .Params.Author }}</span>
+  {{ end -}}
   </div>
+  {{ end }}
 
-  <div class="post-content">
-    {{ if or .Params.toc (and (eq .Params.toc nil) .Site.Params.toc) -}}
-    {{ .TableOfContents }}
-    {{- end }}
-    {{ replace .Content "<table>" "<table class='pure-table pure-table-striped'>" | safeHTML }}
-  </div>
-</div>
+  {{ if or .Params.tags .Params.categories .Params.series }}
+    |
+  {{ end }}
+  {{ if and .Params.tags (isset .Params "tags") }}
+    tags: [ {{ range .Params.tags }}<a href="{{ relURL "tags/" }}{{ . | urlize }}">{{ . }}</a> {{ end }}]
+  {{ end }}
+
+  {{ if and .Params.categories (isset .Params "categories") }}
+    categories: [ {{ range .Params.categories }}<a href="{{ relURL "categories/" }}{{ . | urlize }}">{{ . }}</a> {{ end }}]
+  {{ end }}
+
+  {{ if and .Params.series (isset .Params "series") }}
+    series: [ {{ range .Params.series }}<a href="{{ relURL "series/" }}{{ . | urlize }}">{{ . }}</a> {{ end }}]
+  {{ end }}
+</p>
+
+{{ if or .Params.toc (and (eq .Params.toc nil) .Site.Params.toc) -}}
+  {{ .TableOfContents }}
+{{- end }}
+
+{{ replace .Content "<table>" "<table class='pure-table pure-table-bordered'>" | safeHTML }}
 
 {{ partial "footer" .}}
