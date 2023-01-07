@@ -3,7 +3,7 @@
   <h1>{{ if .Draft }}DRAFT: {{end}}{{ .Title }}</h1>
 
   {{ .Content }}
-  <ul id="list">
+  <ul class="album-list">
     {{- $sortOrder := .Page.Params.Sort | default (.Site.Params.Sort | default "desc") -}}
     {{- $pages := .Data.Pages -}}
     {{ range sort $pages "Date" $sortOrder }}

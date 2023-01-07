@@ -6,7 +6,7 @@
   {{ replace .Content "<table>" "<table class='pure-table pure-table-bordered'>" | safeHTML }}
   {{- end -}}
 
-  <ul id="list">
+  <ul id="default-list">
     {{- $sortOrder := .Page.Params.Sort | default (.Site.Params.Sort | default "desc") -}}
     {{- $pages := .Data.Pages -}}
     {{ range sort $pages "Date" $sortOrder }}
