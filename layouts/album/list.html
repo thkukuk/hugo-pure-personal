@@ -1,12 +1,14 @@
 {{ partial "header" .}}
 
-  <h1 id="title">{{ if .Draft }}DRAFT: {{end}}{{ .Title }}</h1>
+  <h1>{{ if .Draft }}DRAFT: {{end}}{{ .Title }}</h1>
 
-  <p>{{ .Content }}</p>
+  {{ .Content }}
   <ul id="list">
-  {{- range .Pages.ByDate -}}
-    {{ .Render "li" }}
-  {{- end -}}
+    {{- $sortOrder := .Page.Params.Sort | default (.Site.Params.Sort | default "desc") -}}
+    {{- $pages := .Data.Pages -}}
+    {{ range sort $pages "Date" $sortOrder }}
+      {{ .Render "li" }}
+    {{- end -}}
   </ul>
 
 {{ partial "footer" .}}
