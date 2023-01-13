@@ -55,6 +55,7 @@
 
 #nav .pure-menu-link:hover,#nav .pure-menu-link:focus {
     background-color: var(--background-color-menu);
+    color: var(--link-color-hover);
 }
 
 #nav .pure-menu-selected > #nav.pure-menu-link,
