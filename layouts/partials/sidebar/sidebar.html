@@ -19,7 +19,7 @@
       {{ range .Site.Menus.main }}
         <li class="pure-menu-item">
         {{ if .HasChildren }}
-          <div class="dropdown-btn">{{ .Name }}
+          <div class="pure-menu-link dropdown-btn">{{ .Name }}
           {{ if .Params.Icon_svg }}
             <span class="icon">&nbsp;{{ readFile .Params.Icon_svg | safeHTML }}</span>
           {{ end }}
@@ -36,8 +36,9 @@
           </ul>
 	{{ else }}
           <a href="{{ relURL .URL }}" class="pure-menu-link">{{ .Name }}</a>
-	  {{ end }}
-          {{ if .HasChildren }}
+          {{ if .Params.Icon_svg }}
+            <span class="icon">&nbsp;{{ readFile .Params.Icon_svg | safeHTML }}</span>
+          {{ end }}
         {{ end }}
         </li>
       {{ end }}
