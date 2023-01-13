@@ -17,23 +17,28 @@
 
       <ul class="pure-menu-list">
       {{ range .Site.Menus.main }}
-        <li class="pure-menu-item {{ if .HasChildren }}pure-menu-has-children pure-menu-allow-hover{{ end }}">
-          <a href="{{ relURL .URL }}" class="pure-menu-link">{{ .Name }}</a>
-	  {{ if .Params.Icon_svg }}
+        <li class="pure-menu-item">
+        {{ if .HasChildren }}
+          <div class="dropdown-btn">{{ .Name }}
+          {{ if .Params.Icon_svg }}
             <span class="icon">&nbsp;{{ readFile .Params.Icon_svg | safeHTML }}</span>
           {{ end }}
-          {{ if .HasChildren }}
-          <ul class="pure-menu-children">
+          </div>
+          <ul class="dropdown-container">
             {{ range .Children }}
             <li class="pure-menu-item">
               <a href="{{ relURL .URL }}" class="pure-menu-link">{{ .Name }}</a>
-	      {{ if .Params.Icon_svg }}
+              {{ if .Params.Icon_svg }}
                 <span class="icon">&nbsp;{{ readFile .Params.Icon_svg | safeHTML }}</span>
               {{ end }}
             </li>
             {{ end }}
           </ul>
-          {{ end }}
+	{{ else }}
+          <a href="{{ relURL .URL }}" class="pure-menu-link">{{ .Name }}</a>
+	  {{ end }}
+          {{ if .HasChildren }}
+        {{ end }}
         </li>
       {{ end }}
       </ul>
@@ -76,24 +81,21 @@
       }
 </script>
 
-<!-- https://github.com/pure-css/pure/blob/master/site/static/layouts/email/index.html -->
-<!-- script type="text/javascript">
+<!-- https://www.w3schools.com/howto/howto_js_dropdown_sidenav.asp -->
+<script type="text/javascript">
+//* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
 
-
-
-
-    function handleEvent(e) {
-        var elements = getElements();
-
-        if (e.target.id === elements.menuLink.id) {
-            toggleMenu();
-            e.preventDefault();
-        } else if (elements.menu.className.indexOf('active') !== -1) {
-            toggleMenu();
-        }
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
     }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        document.addEventListener('click', handleEvent);
-    });
-</script -->
+  });
+}
+</script>

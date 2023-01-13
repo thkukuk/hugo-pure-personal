@@ -37,7 +37,7 @@
  * Styling the default .pure-menu to look a little more unique.
  */
 #nav .pure-menu {
-    background: transparent;
+    /* background: transparent; */
     border: none;
     text-align: left;
 }
@@ -55,9 +55,10 @@
 #nav .pure-menu-link:hover,#nav .pure-menu-link:focus {
     background-color: var(--background-color-menu);
 }
+
 #nav .pure-menu-selected > #nav.pure-menu-link,
 #nav .pure-menu-selected > #nav.pure-menu-link:visited {
-    color: #fd3519;
+    color: var(--link-color-hover);
 }
 
 #nav .pure-menu-heading {
@@ -138,7 +139,7 @@
 
 /* Rotate first bar */
 .change .bar1 {
-    transform: translate(0, 8px) rotate(-45deg); 
+    transform: translate(0, 8px) rotate(-45deg);
 }
 
 /* Fade out the second bar */
@@ -147,6 +148,43 @@
 /* Rotate last bar */
 .change .bar3 {
     transform: translate(0, -8px) rotate(45deg);
+}
+#nav .dropdown-btn {
+/*  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none; */
+}
+
+#nav .dropdown-btn:hover {
+    color: var(--link-color-hover);
+}
+
+/* Optional: Style the caret down icon */
+#nav .dropdown-btn:after {
+  content: "\25BE";
+  font-size: small;
+  # float: right;
+  padding-right: 8px;
+}
+
+/* Add an active class to the active dropdown button */
+/* .active {
+    background-color: green;
+    color: white;
+} */
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+#nav .dropdown-container {
+    display: none;
+    padding-left: 0px;
 }
 
 /* -- SMARTPHONES -- */
@@ -172,7 +210,7 @@
         position: fixed;
         top: 0;
         bottom: 0;
-        overflow: auto;
+        /* overflow: auto; */
         margin-left: -400px; /* "left col (nav)" width */
         width: 400px;
         height: 100%;
