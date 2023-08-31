@@ -1,0 +1,12 @@
+{{ partial "header" .}}
+
+<h1>{{ if .Draft }}DRAFT: {{end}}{{ .Title }}</h1>
+{{ partial "article/information" . }}
+
+{{- if or .Params.toc (and (eq .Params.toc nil) .Site.Params.toc) -}}
+  {{ .TableOfContents }}
+{{- end -}}
+
+{{ .Content }}
+
+{{ partial "footer" .}}

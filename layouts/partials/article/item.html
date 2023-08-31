@@ -1,0 +1,11 @@
+    <h4>
+      {{- if .Draft }} DRAFT: {{ end -}}
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h4>
+    <div class="published-date">
+      {{ partial "icon/calendar" (dict "size" "15px")}}
+      <span>{{ .PublishDate.Format "January 2, 2006" }}</span>
+      {{- if .Params.Author }}
+      <span> - {{ .Params.Author }}</span>
+      {{ end -}}
+    </div>
