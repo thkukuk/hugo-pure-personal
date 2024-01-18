@@ -5,8 +5,9 @@
   <div class="published-date">
     {{ partial "icon/clock" (dict "size" "18px")}}
     <span>{{ .PublishDate.Format "January 2, 2006" }}</span>
-    {{- if .Params.Author }}
-    <span> - {{ .Params.Author }}</span>
+    {{- $author := or (.Params.Author) (.Site.Params.Author.name) -}}
+    {{- if $author }}
+    <span> - {{ $author }}</span>
     {{ end -}}
   </div>
   <p>{{ .Summary | plainify | safeHTML }}</p>
