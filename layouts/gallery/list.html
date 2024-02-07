@@ -1,10 +1,17 @@
 {{ partial "header" .}}
 
+  {{- if or .Params.toc (and (eq .Params.toc nil) .Site.Params.toc) -}}
+      {{ .TableOfContents }}
+  {{- end -}}
+
 <h1>{{ if .Draft }}DRAFT: {{end}}{{ .Title }}</h1>
 
   {{ .Content }}
 
-  {{ range .Pages.ByDate.Reverse }}
+  {{- $sortOrder := .Page.Params.Sort | default (.Site.Params.Sort | default "desc") -}}
+  {{- $sortKey := .Page.Params.SortKey | default (.Site.Params.SortKey | default "Date") -}}
+  {{- $pages := .Data.Pages -}}
+  {{ range sort $pages $sortKey $sortOrder }}
     {{ partial "gallery/item" .}}
   {{ end }}
 
