@@ -3,10 +3,12 @@
   <span>{{ .ReadingTime }} {{ "minute" | pluralize }}</span>
 </div>
 
+{{- $date := .PublishDate.Format "January 2, 2006" -}}
+{{- $lastmod := .Lastmod.Format "January 2, 2006" -}}
 <div class="published-date">
   {{ partial "icon/calendar" (dict "size" "18px")}}
-  <span>{{ .PublishDate.Format "January 2, 2006" }}</span>
-  {{- if .Lastmod }}
-    <span>- Last modified: {{ .Lastmod.Format "January 2, 2006" }}</span>
+  <span>{{ $date }}</span>
+  {{- if ne $lastmod $date }}
+    <span>- Last modified: {{ $lastmod }}</span>
   {{ end -}}
 </div>
