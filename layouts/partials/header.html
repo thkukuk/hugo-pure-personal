@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-{{- if .Params.Language }}
-<html lang='{{ .Params.Language }}'>
-{{ else }}
-<html lang='{{ site.LanguageCode | default site.Language.Lang }}'>
-{{ end }}
-{{- partial "head/head" . -}}
+<html lang='{{ .Params.Language | default (site.LanguageCode | default site.Language.Lang) }}'>
+{{ partial "head/head" . -}}
 
 <body>
   <div id="layout" class="pure-g">
