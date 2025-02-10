@@ -1,0 +1,10 @@
+{{ partial "header" . }}
+
+  <ul id="default-list">
+    {{- $pages := .Data.Pages -}}
+    {{ range sort $pages "Name" "asc" }}
+      {{ .Render "li" }}
+    {{- end -}}
+  </ul>
+
+{{ partial "footer" . }}
